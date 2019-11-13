@@ -4,8 +4,9 @@ Files with different commentaries related to the PHP language for further consul
 
 ## Subtopics
 
-###jQuery
+### jQuery
 It is a Javascript Framework. And the main purpose of this framework is to make this that are a little bit complicated in Javascript a lot easier. It gives a lot more power with less code.
+
 Popular plugins:
 * jQueryUI
 * RubberBand
