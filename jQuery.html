@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title>jQuery</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <style type="text/css">
+            #circle{
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                background-color: green;
+            }
+            .square{
+                width: 150px;
+                height: 150px;
+                background-color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="circle"></div>
+        <br>
+        <!-- <p>This is some text!</p>
+
+        <iframe src="https://www.codestars.com/"></iframe> -->
+
+        <div class="square"></div>
+        <br>
+        <div class="square"></div>
+        <!-- <p>Hello my sir!</p> -->
+
+        <script type="text/javascript">
+            //1 - Changing content
+            /*
+            //select the circle
+            //to select by ID use #
+            let state = false
+            $("#circle").click(() => {
+                //Allow to change the attributes inside the tag
+                $("iframe").attr("src", "https://www.ecowebhosting.co.uk")
+                // if(state){
+                //     //whith the functuin html() you can change or get the HTML atribute
+                //     //alert($('p').html())
+                //     $('p').html("This is some text!")
+                //     state = false
+                // }
+                // else{
+                //     $('p').html("This text has changed!")
+                //     state = true
+                // }
+
+            })
+            //to check if the mouse is hovering the object
+            // $("#circle").hover(() => {
+            //     alert("Hovering")
+            // })
+
+            // //to select by the class use .
+            // $(".square").click(() => {
+            //     alert("TEST1")
+            // })
+            // //you can also select all div's elements
+            // $("div").click(() => {
+            //     alert("TEST2")
+            // })
+            */
+
+            //2 - Changing styles
+            /*
+            $('#circle').click(() => {
+                //with this function you can set or get CSS properties from a HTML element
+                // $("#circle").css("width", "400px")
+                // $("#circle").css("background-color", "red")
+                // alert($("html").css("width"))
+                $("#circle").css("display", "none")
+            })
+    
+            $(".square").click(() => {
+                $(this).css("display", "none")
+            })
+            
+            $("div").click((e) => {
+                //need to use the event.target to work
+                console.log("click")
+                console.log(e.target)
+                $(e.target).css({"display": "none"})
+                if($(e.target).attr("id")){
+                    alert("You clicked on a " + $(e.target).attr("id"))
+                }
+                else{
+                    alert("You clicked on a Square")
+                }
+                
+            })
+            */
+            
+            //3 - Fading Content
+            $("div").click((e) => {
+                $(e.target).fadeOut()
+            })
+
+        </script>
+
+    </body>
+
+</html>
+
