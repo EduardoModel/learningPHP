@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>jQuery</title>
+        <title>AJAX</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <style type="text/css">
             #circle{
@@ -14,21 +14,31 @@
                 height: 150px;
                 background-color: red;
             }
+            #toShowP{
+                display: none;
+            }
         </style>
     </head>
 
     <body>
 
-        <div id="circle"></div>
+        <!-- <div id="circle"></div> -->
+        <!--
         <br>
-        <!-- <p>This is some text!</p>
+        <p>This is some text!</p>
 
-        <iframe src="https://www.codestars.com/"></iframe> -->
+        <iframe src="https://www.codestars.com/"></iframe> 
 
         <div class="square"></div>
         <br>
         <div class="square"></div>
-        <!-- <p>Hello my sir!</p> -->
+        <p>Hello my sir!</p> -->
+
+        <!-- <p id="text">Hello my dear Sir.</p>
+        <button id="toggleButton">Toggle Text</button> -->
+        
+        <!-- <p id="toShowP">I was hidden Sir.</p>
+        <button id="fadeInButton">Fade In Text</button> -->
 
         <script type="text/javascript">
             //1 - Changing content
@@ -65,7 +75,8 @@
             //     alert("TEST2")
             // })
             */
-
+        </script>
+        <script type="text/javascript">
             //2 - Changing styles
             /*
             $('#circle').click(() => {
@@ -94,11 +105,98 @@
                 
             })
             */
-            
+        </script>
+
+        <script type="text/javascript">
             //3 - Fading Content
+            /*
             $("div").click((e) => {
-                $(e.target).fadeOut()
+                //the parameters of the animations/effects can be 
+                //modified
+                //when the effect is done, you can call a callback function too
+                //$(e.target).hide()
+                $(e.target).fadeOut("slow", () => {
+                    alert("Completed!") 
+                })
             })
+           
+            // let isDisplayed = true;
+            // with the callback is better
+            // $("#toggleButton").click(() => {
+            //     if(isDisplayed){
+            //         $("p").fadeOut("slow", () => {
+            //         isDisplayed = false
+            // })
+            //     }
+            //     else{
+            //         $("p").fadeIn("slow", () => {
+            //         isDisplayed = true
+            // })
+            //     }
+            // })
+            $("#toggleButton").click(() => {
+                if($("#text").css("display") == "none"){
+                    $("p").fadeIn("slow")
+                }
+                else{
+                    $("p").fadeOut("slow")
+                }
+                
+            })
+            */
+        </script>
+
+        <script type="text/javascript">
+            //4 - Animating Content
+            /*
+            $("#circle").click((e) => {
+                //obj with the atributes after the animation
+                //and the duration of the animation
+                $(e.target).animate({
+                    width:"400px",
+                    height:"400px",
+                    marginLeft: "100px",
+                    marginTop: "100px"
+                }, 400, function() {
+                    console.log(this)
+                    $(this).css("background-color", "red")
+                })
+            })
+            */
+        </script>
+
+        <!-- <p id="blankP" ></p> -->
+        <script type="text/javascript">
+            //5 -AJAX
+            //works only on a live server!
+            /*
+            $.get("text.txt", (data) => {
+                alert(data)
+            })
+            */
+            //a more powerful command is with AJAX
+            /*
+            $.ajax("text.txt").done((data) => {
+                $("#blankP").html(data)
+            }).fail(() => {
+                alert("Could not get data")
+            })
+            */
+        </script>
+
+        <script type="text/javascript">
+            //6 - Regular Expressions
+            //let regex = /is/
+            //regular expressions are case sensitive
+            //let regex = /Great/i //i make a case insensitive search
+            let regex = /e/g //with the g flag (global flag) it test the ocurrence of the string within the string
+            let string = "Regex is great"
+            //the function match takes one atribute and it is a regular expression
+            //when the function find a pice of text that matches the regular expression
+            //it returns the matched string. otherwise return null
+            let result = string.match(regex)
+            
+            alert(result)
 
         </script>
 
