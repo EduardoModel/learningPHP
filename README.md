@@ -14,3 +14,6 @@ Popular plugins:
 * Magnific Popup
 * Unslider
 * typeahead.js
+
+### Bootstrap
+It is a HTML, CSS and Javascript framework to develop responsive and mobile projects on the web
