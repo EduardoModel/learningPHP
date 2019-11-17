@@ -2,6 +2,9 @@
     <head>
         <title>AJAX</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css" type="text/css">
+        
         <style type="text/css">
             #circle{
                 width: 150px;
@@ -186,6 +189,7 @@
 
         <script type="text/javascript">
             //6 - Regular Expressions
+            /*
             //let regex = /is/
             //regular expressions are case sensitive
             //let regex = /Great/i //i make a case insensitive search
@@ -197,7 +201,44 @@
             let result = string.match(regex)
             
             alert(result)
+            */
+        </script>
 
+        <!-- <div  class="ui.-widget-content">
+            <p id="draggable">Draggable</p>
+        </div> -->
+
+        <script type="text/javascript">
+            //7 - jQuery UI
+            /*
+            $(() => {
+                $("#draggable").draggable()
+            })
+            */
+        </script>
+
+        <div style="width:400px;height:300px;background-color:blue">
+            <p style="width: 35px" id="draggable">Drag me!</p>
+        </div>
+
+        <div id="resizable" style="width:150px;height:150px;background-color: purple">
+            <p>Resizable</p>
+        </div>
+
+        <script type="text/javascript">
+            //8 - jQuery draggables and resizebles
+            //constrain the movement in the Y axis
+            // $("#draggable").draggable({axis:"y"})
+            //constrain movement within the parent component
+            $("#draggable").draggable({containment: "parent"})
+            //limit the increment of the resizable component
+            $("#resizable").resizable({grid: 25, resize: (event, ui) => {
+                if(ui.size.width == 400){
+                    alert("OPAAA")
+                }
+            }})
+
+            
         </script>
 
     </body>
